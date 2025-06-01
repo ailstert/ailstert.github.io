@@ -1,13 +1,15 @@
- p{
-            font-size:50px;
-            color:rgba(9, 155, 116, 0.75);
-                    font-family: 'Georgia', Times New Roman, serif
-                }
-                #container{
-                    width:1600px;
-                        height: 900 px
-                        margin-left: auto
-                        margin-right: auto
-                        position:relative
-                        top: 75p;
-                }
+p {
+    font-size: 50px;
+    color: rgba(9, 155, 116, 0.75);
+    font-family: 'Georgia', Times New Roman, serif;
+}
+
+#container {
+    width: 1600px;
+    height: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 75px;
+}
+
