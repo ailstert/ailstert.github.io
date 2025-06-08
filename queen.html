@@ -4,32 +4,130 @@
         <meta charset="UTF-8" />
         <title>The Queen's Sorrow</title>
         <style>
-            body{
-                margin: 0;
-                    padding:0;
+            body {
                 background-color: antiquewhite;
-               }
-               .background-img{
-                   position:fixed
-                       top: 50;
-                   left:50;
-                   width:100%;
-                   height: 100%;
-                   object-fit:cover;
-                   z-index: 0;
-               }
-               .container{
-                   width:1600px;
-                   height:900px;
-                   margin:0 auto;/*center horrizontally */
-                   background-color: antiquewhite
-               }
+            }
+            #container {
+                position: relative;
+                width: 1600px;
+                height: 900px;
+                margin: auto;
+            }
+
+            #castle {
+                position: absolute;
+                width: 1600px;
+                height: 900px;
+                margin: auto;
+                z-index: 0;
+            }
+
+            #queen {
+                position: absolute;
+                bottom: 0;
+                left: 500px;
+                z-index: 20;
+            }
+
+            #cigarette {
+                position: absolute;
+                left: 618px;
+                top: 500px;
+                z-index: 30;
+            }
+
+            #crown {
+                position: absolute;
+                left: 580px;
+                top: 129px;
+                z-index: 40;
+            }
+
+            #bunny {
+                position: absolute;
+                left: 280px;
+                top: 60px;
+                z-index: 45;
+            }
+
+            #all {
+                position: absolute;
+                left: 1130px;
+                top: 530px;
+                z-index: 50;
+            }
+
+            #papertext {
+                position: absolute;
+                left: 1000px;
+                top: 330px;
+                z-index: 18;
+            }
+
+            #lips {
+                position: absolute;
+                left: 639px;
+                top: 458px;
+                z-index: 25;
+            }
+
+            #tear {
+                position: absolute;
+                left: 555px;
+                top: 418px;
+                z-index: 28;
+            }
+
+            #shadow {
+                position: absolute;
+                left: 1105px;
+                top: 145px;
+                z-index: 17;
+            }
+
+            #fishing {
+                position: absolute;
+                left: -10px;
+                top: 570px;
+                z-index: 60;
+            }
+
+            #rip {
+                position: absolute;
+                left: 1070px;
+                top: 539px;
+                z-index: 505;
+            }
+
+            #scepter {
+                position: absolute;
+                left: 1060px;
+                top: 140px;
+                z-index: 80;
+            }
         </style>
     </head>
     <body>
-        <img src="castle.png" alt="Castle Background" width="1024" height="1229"/>
-        <img src="queen.png">
-        <img src="cigarette.gif"
-        
+        <a href="index.html">Home Page</a>
+        <a href="black%20crow.html">Black Crow</a>
+        <a href="thefinalact.html">The Final Act</a>
+        <div id="container">
+            <div id="castle"><img src="castle.png" alt="castle" height="900" width="1600" /></div>
+            <div id="queen"><img src="queen.png" alt="queen" height="776" width="550" /></div>
+            <div id="cigarette"><img src="cigarette.gif" alt="cigarette" height="300" width="300" /></div>
+            <div id="crown">
+                <img src="crown.png" style="transform: rotate(10deg)" alt="crown" height="228" width="350" />
+            </div>
+            <div id="bunny"><img src="bunny.png" alt="bunny" height="550" width="440" /></div>
+            <div id="papertext"><img src="papertext.png" alt="text" height="363" width="500" /></div>
+            <div id="lips"><img src="lips.png" alt="lips" height="150" width="150" /></div>
+            <div id="tear"><img src="tear.gif" alt="tear" height="450" width="450" /></div>
+            <div id="shadow"><img src="shadow.png" style="opacity: 0.6" alt="shadow" height="227" width="300" /></div>
+            <div id="fishing">
+                <img src="fishing.png" style="opacity: 0.8" alt="fishing" height="333" width="500" />
+            </div>
+            <div id="rip"><img src="rip.png" style="opacity: 0.8" alt="rip" height="400" width="400" /></div>
+            <div id="scepter"><img src="scepter.png" alt="scepter" height="523" width="400" /></div>
+        </div>
     </body>
 </html>
