@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>The Will</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: dimgray;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      font-family: "Times New Roman", Times, serif;
+    }
+
+    nav {
+      background-color: #2c2c2c;
+      text-align: center;
+      padding: 10px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 20px;
+      font-size: 1.2em;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    #container {
+      position: relative;
+      width: 1600px;
+      height: 900px;
+      margin: auto;
+    }
+
+    p,
+    h3 {
+      font-size: 2.5em;
+      color: rgba(255, 255, 255, 0.99);
+      padding: 10px;
+      margin: 25px 45px;
+      border-radius: 35px;
+    }
+
+    #will {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 0;
+    }
+
+    #will img {
+      opacity: 0.1;
+    }
+
+    #locket {
+      position: absolute;
+      bottom: 290px;
+      right: 200px;
+      z-index: 20;
+    }
+
+    #bridgeticket {
+      position: absolute;
+      bottom: 520px;
+      left: -40px;
+      z-index: 30;
+    }
+
+    #mustachecup {
+      position: absolute;
+      bottom: 310px;
+      left: 300px;
+      z-index: 40;
+    }
+
+    #jewelrybox {
+      position: absolute;
+      bottom: 500px;
+      right: 480px;
+      z-index: 50;
+    }
+
+    #woodencamera {
+      position: absolute;
+      bottom: 40px; /* Slightly raised for tooltip */
+      left: -90px;
+      z-index: 15;
+      cursor: pointer;
+    }
+
+    /* Caption centered at bottom */
+    #caption {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #000;
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.7);
+      padding: 10px 20px;
+      border-radius: 10px;
+      z-index: 100;
+      font-size: 1.2em;
+      max-width: 80%;
+    }
+
+    /* Tooltip */
+    .tooltip-wrapper {
+      position: relative;
+      display: inline-block;
+    }
+
+    .tooltip-text {
+      visibility: hidden;
+      width: 200px;
+      background-color: black;
+      color: #fff;
+      text-align: center;
+      border-radius: 5px;
+      padding: 5px;
+      position: absolute;
+      bottom: 110%;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 100;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .tooltip-wrapper:hover .tooltip-text {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    /* Flash effect */
+    #flash {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: white;
+      opacity: 0;
+      pointer-events: none;
+      z-index: 999;
+    }
+
+    .flash-active {
+      animation: flashEffect 0.5s ease-in-out;
+    }
+
+    @keyframes flashEffect {
+      0% { opacity: 0; }
+      20% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html">Home Page</a>
+    <a href="citation.html">Citation</a>
+  </nav>
+
+  <!-- Main Container -->
+  <div id="container">
+    <!-- Faded Background Image -->
+    <div id="will">
+      <img src="will.png" alt="will" height="900" width="1600" />
+    </div>
+
+    <!-- Layered Items -->
+    <div id="locket">
+      <img src="ethelblige.png" alt="grandparents" height="400" width="400" />
+    </div>
+
+    <div id="bridgeticket">
+      <img src="bridgeticket.png" alt="bridgeticket" height="500" width="500" />
+    </div>
+
+    <div id="mustachecup">
+      <img src="mustachecup.png" alt="mustachecup" height="500" width="500" />
+    </div>
+
+    <div id="jewelrybox">
+      <img src="jewelrybox.png" alt="jewelrybox" height="689" width="510" />
+    </div>
+
+    <!-- Interactive Camera -->
+    <div id="woodencamera" onclick="flashAndGo()">
+      <div class="tooltip-wrapper">
+        <img src="woodencamera.png" alt="woodencamera" height="500" width="500" />
+        <span class="tooltip-text">Click camera to time travel</span>
+      </div>
+    </div>
+
+    <!-- Caption -->
+    <div id="caption">
+      <p>Great! My grandfather left me his camera collection and an old trunk? Let's try out the vintage camera.</p>
+    </div>
+  </div>
+
+  <!-- Flash Overlay -->
+  <div id="flash"></div>
+
+  <!-- Script for Flash + Redirect -->
+  <script>
+    function flashAndGo() {
+      const flash = document.getElementById("flash");
+      flash.classList.remove("flash-active");
+      void flash.offsetWidth; // Trigger reflow
+      flash.classList.add("flash-active");
+
+      setTimeout(() => {
+        window.location.href = "cumine.html";
+      }, 500);
+    }
+  </script>
+</body>
+</html>

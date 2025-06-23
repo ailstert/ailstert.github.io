@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Thomas Rhondy</title>
+  <style>
+    body {
+      background-color: #5fa081;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    nav {
+      padding: 10px;
+      background-color: #3c6e5a;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    #container {
+      position: relative;
+      width: 1600px;
+      height: 900px;
+      margin: auto;
+    }
+
+    #blue {
+      position: absolute;
+      top: 500px;
+      left: 950px;
+      z-index: 10;
+    }
+
+    #dad {
+      position: absolute;
+      left: 780px;
+      top: 150px;
+      z-index: 3;
+    }
+
+    #tommy {
+      position: absolute;
+      left: 300px;
+      top: 300px;
+      z-index: 40;
+    }
+
+    #thomas {
+      position: absolute;
+      left: 1180px;
+      top: 70px;
+      z-index: 1;
+    }
+
+    /* Tooltip styles */
+    .tooltip-wrapper {
+      position: absolute;
+      left: 50px;
+      top: 100px;
+      cursor: pointer;
+      z-index: 100;
+    }
+
+    .tooltip-text {
+      visibility: hidden;
+      width: 180px;
+      background-color: black;
+      color: #fff;
+      text-align: center;
+      border-radius: 5px;
+      padding: 5px;
+      position: absolute;
+      bottom: 110%;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      z-index: 200;
+    }
+
+    .tooltip-wrapper:hover .tooltip-text {
+      visibility: visible;
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* Flash overlay */
+    #flash {
+      pointer-events: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: white;
+      opacity: 0;
+      z-index: 9999;
+      transition: opacity 0.4s ease;
+    }
+
+    #flash.flash-active {
+      opacity: 1;
+    }
+
+    #caption {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #000;
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.7);
+      padding: 10px;
+      border-radius: 10px;
+      z-index: 70;
+      width: 90%;
+      max-width: 600px;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home Page</a>
+    <a href="citation.html">Citation</a>
+  </nav>
+
+  <div id="container">
+    <!-- Camera image with tooltip -->
+    <div class="tooltip-wrapper" onclick="flashAndGo(event)" role="button" tabindex="0" onkeydown="handleKey(event)" style="left: 50px; top: 100px;">
+      <img src="camerasixties.png" alt="Camera" height="736" width="500" />
+      <div class="tooltip-text">Click camera to time travel</div>
+    </div>
+
+    <div id="blue">
+      <img src="blue.png" alt="blue" height="380" width="600" />
+    </div>
+
+    <div id="dad">
+      <img src="dad.png" alt="dad" height="533" width="400" />
+    </div>
+
+    <div id="tommy">
+      <img src="tommy.png" alt="tommy" height="600" width="600" />
+    </div>
+
+    <div id="thomas">
+      <img src="thomas.png" alt="thomas" height="400" width="318" />
+    </div>
+
+    <div id="caption">
+      <p>
+        I know that car! That's my dad's car he left me. Have the cameras been producing photographs of my ancestors?
+      </p>
+    </div>
+  </div>
+
+  <!-- Flash overlay -->
+  <div id="flash"></div>
+
+  <script>
+    function flashAndGo(event) {
+      event.preventDefault();
+      const flash = document.getElementById("flash");
+      flash.classList.add("flash-active");
+
+      setTimeout(() => {
+        window.location.href = "trunk.html";
+      }, 400);
+    }
+
+    function handleKey(event) {
+      if (event.key === "Enter" || event.key === " ") {
+        flashAndGo(event);
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Charles Final</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #5f75a0;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    nav {
+      background-color: #2f3e56;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: bold;
+    }
+
+    #container {
+      position: relative;
+      width: 1600px;
+      height: 900px;
+      margin: auto;
+    }
+
+    #certificate {
+      position: absolute;
+      top: 300px;
+      left: 800px;
+      z-index: 0;
+    }
+
+    #finalletter {
+      position: absolute;
+      bottom: 5px;
+      left: 360px;
+      z-index: 20;
+    }
+
+    #tank {
+      position: absolute;
+      top: 800px;
+      left: 190px;
+      z-index: 30;
+    }
+
+    #musket {
+      position: absolute;
+      left: 700px;
+      top: 70px;
+      z-index: 40;
+    }
+
+    #medicpatch {
+      position: absolute;
+      left: 1100px;
+      top: 70px;
+      z-index: 60;
+    }
+
+    #camera {
+      position: absolute;
+      left: 50px;
+      top: 80px;
+      z-index: 100;
+      cursor: pointer;
+    }
+
+    .tooltip-wrapper {
+      position: relative;
+      display: inline-block;
+    }
+
+    .tooltip-text {
+      visibility: hidden;
+      width: 160px;
+      background-color: black;
+      color: #fff;
+      text-align: center;
+      border-radius: 4px;
+      padding: 5px 10px;
+      position: absolute;
+      bottom: 125%;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      z-index: 200;
+    }
+
+    .tooltip-wrapper:hover .tooltip-text {
+      visibility: visible;
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    #flash {
+      pointer-events: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: white;
+      opacity: 0;
+      z-index: 9999;
+      transition: opacity 0.4s ease;
+    }
+
+    #flash.flash-active {
+      opacity: 1;
+    }
+
+    #caption {
+      position: absolute;
+      bottom: 5px;
+      left: 60%;
+      transform: translateX(-50%);
+      color: #000;
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.7);
+      padding: 10px;
+      border-radius: 10px;
+      z-index: 70;
+      width: 90%;
+      max-width: 600px;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home Page</a>
+    <a href="citation.html">Citation</a>
+  </nav>
+
+  <div id="container">
+    <!-- Time travel camera -->
+    <div id="camera" role="button" tabindex="0" onclick="flashAndGo(event)" onkeydown="handleKey(event)">
+      <div class="tooltip-wrapper">
+        <img src="camerasixties.png" alt="Camera" height="736" width="500" />
+        <div class="tooltip-text">Click camera to time travel</div>
+      </div>
+    </div>
+
+    <!-- Objects -->
+    <div id="certificate">
+      <img src="certificate.png" alt="certificate" height="761" width="600" />
+    </div>
+
+    <div id="finalletter">
+      <img src="finalletter.png" style="transform: rotate(20deg)" alt="final letter" height="800" width="600" />
+    </div>
+
+    <div id="tank">
+      <img src="armytank.png" alt="army tank" height="170" width="400" />
+    </div>
+
+    <div id="musket">
+      <img src="musket.png" alt="musket" height="300" width="400" />
+    </div>
+
+    <div id="medicpatch">
+      <img src="medicband.png" alt="medic patch" height="300" width="400" />
+    </div>
+
+    <!-- Caption -->
+    <div id="caption">
+      <p>
+        His parents were sent the wrong information. But these cameras keep creating their own images. Who are these
+        people?! Let's try one last camera.
+      </p>
+    </div>
+  </div>
+
+  <!-- Flash animation overlay -->
+  <div id="flash"></div>
+
+  <!-- Script -->
+  <script>
+    let clicked = false;
+
+    function flashAndGo(event) {
+      if (clicked) return;
+      clicked = true;
+      event.preventDefault();
+
+      const flash = document.getElementById("flash");
+      flash.classList.remove("flash-active");
+      void flash.offsetWidth; // trigger reflow
+      flash.classList.add("flash-active");
+
+      setTimeout(() => {
+        window.location.href = "theboys.html";
+      }, 400);
+    }
+
+    function handleKey(event) {
+      if (event.key === "Enter" || event.key === " ") {
+        flashAndGo(event);
+      }
+    }
+  </script>
+</body>
+</html>

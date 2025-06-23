@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>World War II</title>
+    <style>
+      body {
+        background-color: darkred;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        font-family: "Times New Roman", Times, serif;
+      }
+
+      #container {
+        position: relative;
+        width: 1600px;
+        height: 900px;
+        margin: auto;
+        overflow: hidden;
+      }
+
+      a {
+        color: white;
+        margin: 15px;
+        font-size: 1.2em;
+        display: inline-block;
+        text-decoration: none;
+      }
+
+      #worldwartwo {
+        position: absolute;
+        bottom: 200px;
+        right: 1000px;
+        z-index: 10;
+        cursor: pointer;
+      }
+
+      #boys {
+        position: absolute;
+        top: 480px;
+        left: 350px;
+        z-index: 10;
+      }
+
+      #starflag {
+        position: absolute;
+        left: 1020px;
+        top: 400px;
+        z-index: 20;
+      }
+
+      #hat {
+        position: absolute;
+        left: 700px;
+        top: 16px;
+        z-index: 3;
+      }
+
+      #pipe {
+        position: absolute;
+        left: 100px;
+        top: 650px;
+        z-index: 40;
+      }
+
+      #razor {
+        position: absolute;
+        left: 500px;
+        top: 5px;
+        z-index: 50;
+      }
+
+      #punn {
+        position: absolute;
+        left: 970px;
+        top: 129px;
+        z-index: 16;
+      }
+
+      #twins {
+        position: absolute;
+        left: 1100px;
+        top: 130px;
+        z-index: 15;
+      }
+
+      #westernunion {
+        position: absolute;
+        left: 370px;
+        top: 320px;
+        z-index: 5;
+      }
+
+      #postcardfront {
+        position: absolute;
+        left: 20px;
+        top: 10px;
+        z-index: 60;
+      }
+
+      #postcardback {
+        position: absolute;
+        left: 188px;
+        top: 90px;
+        z-index: 70;
+      }
+
+      .tooltip-wrapper {
+        position: relative;
+        display: inline-block;
+      }
+
+      .tooltip-text {
+        visibility: hidden;
+        width: 200px;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        border-radius: 5px;
+        padding: 5px;
+        position: absolute;
+        bottom: 110%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 100;
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+
+      .tooltip-wrapper:hover .tooltip-text {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      /* Flash overlay */
+      #flash {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: white;
+        opacity: 0;
+        pointer-events: none;
+        z-index: 999;
+      }
+
+      .flash-active {
+        animation: flashEffect 0.5s ease-in-out forwards;
+      }
+
+      @keyframes flashEffect {
+        0% {
+          opacity: 0;
+        }
+        20% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+
+      /* Caption styling */
+      #caption {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #000;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.7);
+        padding: 10px 20px;
+        border-radius: 10px;
+        z-index: 70;
+        font-size: 1.2em;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="index.html">Home Page</a>
+    <a href="citation.html">Citation</a>
+
+    <div id="container">
+      <!-- Clickable Camera -->
+      <div id="worldwartwo" onclick="flashAndGo()">
+        <div class="tooltip-wrapper">
+          <img src="worldwarcamera.png" alt="World War II camera" height="370" width="500" />
+          <span class="tooltip-text">Click camera to time travel</span>
+        </div>
+      </div>
+
+      <div id="boys"><img src="theboys.png" alt="The Boys" height="500" width="400" /></div>
+      <div id="starflag"><img src="starflag.png" alt="Star Flag" height="500" width="400" /></div>
+      <div id="hat">
+        <img src="punshat.png" style="transform: rotate(40deg)" alt="Puns Hat" height="400" width="600" />
+      </div>
+      <div id="pipe"><img src="pipe.png" style="transform: rotate(20deg)" alt="Pipe" height="200" width="400" /></div>
+      <div id="razor">
+        <img src="razor.png" style="transform: rotate(40deg)" alt="Razor" height="300" width="400" />
+      </div>
+      <div id="punn"><img src="punn.png" alt="Punn" height="400" width="400" /></div>
+      <div id="twins"><img src="twins.png" alt="Twins" height="400" width="400" /></div>
+      <div id="westernunion"><img src="westernunion.png" alt="Western Union" height="400" width="600" /></div>
+      <div id="postcardfront"><img src="postcardone.png" alt="Postcard Front" height="225" width="300" /></div>
+      <div id="postcardback">
+        <img src="postcardtwo.png" style="transform: rotate(-20deg)" alt="Postcard Back" height="325" width="400" />
+      </div>
+
+      <div id="caption"><p>Ugh! Let's try again?!</p></div>
+    </div>
+
+    <!-- Flash overlay -->
+    <div id="flash"></div>
+
+    <script>
+      function flashAndGo() {
+        const flash = document.getElementById("flash");
+        flash.classList.remove("flash-active");
+        void flash.offsetWidth; // Force reflow
+        flash.classList.add("flash-active");
+
+        setTimeout(() => {
+          window.location.href = "worldwarending.html";
+        }, 500);
+      }
+    </script>
+  </body>
+</html>

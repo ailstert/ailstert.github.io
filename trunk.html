@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Thomas Rhondy</title>
+  <style>
+    body {
+      background-color: #d0aa5a;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    nav {
+      padding: 10px;
+      background-color: #6e643c;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    #container {
+      position: relative;
+      width: 1600px;
+      height: 900px;
+      margin: auto;
+    }
+
+    #warrations {
+      position: absolute;
+      top: 500px;
+      left: 950px;
+      z-index: 10;
+    }
+
+    #tiregauge {
+      position: absolute;
+      bottom: 300px;
+      left: 860px;
+      z-index: 2;
+    }
+
+    #warglasses {
+      position: absolute;
+      left: 480px;
+      top: 150px;
+      z-index: 3;
+    }
+
+    #valentine {
+      position: absolute;
+      left: 1180px;
+      top: 70px;
+      z-index: 1;
+    }
+
+    /* Tooltip styles */
+    .tooltip-wrapper {
+      position: absolute;
+      left: 50px;
+      top: 100px;
+      cursor: pointer;
+      z-index: 100;
+      outline: none;
+    }
+
+    .tooltip-text {
+      visibility: hidden;
+      width: 180px;
+      background-color: black;
+      color: #fff;
+      text-align: center;
+      border-radius: 5px;
+      padding: 5px;
+      position: absolute;
+      bottom: 110%;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      z-index: 200;
+    }
+
+    .tooltip-wrapper:hover .tooltip-text,
+    .tooltip-wrapper:focus .tooltip-text {
+      visibility: visible;
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* Flash overlay */
+    #flash {
+      pointer-events: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: white;
+      opacity: 0;
+      z-index: 9999;
+      transition: opacity 0.4s ease;
+    }
+
+    #flash.flash-active {
+      opacity: 1;
+    }
+
+    #caption {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #000;
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.7);
+      padding: 10px;
+      border-radius: 10px;
+      z-index: 70;
+      width: 90%;
+      max-width: 600px;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home Page</a>
+    <a href="citation.html">Citation</a>
+  </nav>
+
+  <div id="container">
+    <!-- Camera image with tooltip and keyboard support -->
+    <div 
+      class="tooltip-wrapper" 
+      onclick="flashAndGo(event)" 
+      role="button" 
+      tabindex="0" 
+      onkeydown="handleKey(event)"
+      aria-label="Click camera to time travel"
+    >
+      <img src="camerasixties.png" alt="Camera" height="736" width="500" />
+      <div class="tooltip-text">Click camera to time travel</div>
+    </div>
+
+    <div id="warrations">
+      <img src="warrations.png" alt="warrations" height="300" width="400" />
+    </div>
+
+    <div id="tiregauge">
+      <img src="tiregauge.png" alt="tiregauge" height="533" width="400" />
+    </div>
+
+    <div id="warglasses">
+      <img src="warglasses.png" alt="warglasses" height="533" width="400" />
+    </div>
+
+    <div id="valentine">
+      <img src="valentine.png" alt="valentine" height="533" width="400" />
+    </div>
+
+    <div id="caption">
+      <p>
+        The trunk is full of old photos and documents. Is the trunk and the cameras trying to tell me a story of the past?
+      </p>
+    </div>
+  </div>
+
+  <!-- Flash overlay -->
+  <div id="flash"></div>
+
+  <script>
+    function flashAndGo(event) {
+      event.preventDefault();
+      const flash = document.getElementById("flash");
+      flash.classList.add("flash-active");
+
+      setTimeout(() => {
+        window.location.href = "thewill.html";
+      }, 400);
+    }
+
+    function handleKey(event) {
+      if (event.key === "Enter" || event.key === " ") {
+        flashAndGo(event);
+      }
+    }
+  </script>
+</body>
+</html>

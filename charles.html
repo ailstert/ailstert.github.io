@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>World War II Ending</title>
+  <style>
+    body {
+      background-color: cadetblue;
+      margin: 0;
+      padding: 0;
+    }
+
+    #container {
+      position: relative;
+      width: 1600px;
+      height: 900px;
+      margin: auto;
+      overflow: hidden;
+    }
+
+    a {
+      color: white;
+      margin: 15px;
+      font-size: 1.2em;
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    #epinal {
+      position: absolute;
+      width: 1600px;
+      height: 900px;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+
+    #obit {
+      position: absolute;
+      bottom: 250px;
+      left: 160px;
+      z-index: 20;
+    }
+
+    #tube {
+      position: absolute;
+      left: 1018px;
+      top: 5px;
+      z-index: 30;
+    }
+
+    #goggles {
+      position: absolute;
+      left: 500px;
+      top: -10px;
+      z-index: 40;
+    }
+
+    #musket {
+      position: absolute;
+      left: 550px;
+      top: 60px;
+      z-index: 5;
+    }
+
+    /* Camera wrapper */
+    #worldwartwo {
+      position: absolute;
+      bottom: 100px;
+      left: 100px;
+      z-index: 100;
+      cursor: pointer;
+    }
+
+    .tooltip-wrapper {
+      position: relative;
+      display: inline-block;
+    }
+
+    .tooltip-text {
+      visibility: hidden;
+      width: 160px;
+      background-color: black;
+      color: #fff;
+      text-align: center;
+      border-radius: 4px;
+      padding: 5px 10px;
+      position: absolute;
+      bottom: 125%;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      z-index: 200;
+    }
+
+    .tooltip-wrapper:hover .tooltip-text {
+      visibility: visible;
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* Flash effect */
+    #flash {
+      pointer-events: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: white;
+      opacity: 0;
+      z-index: 9999;
+      transition: opacity 0.4s ease;
+    }
+
+    #flash.flash-active {
+      opacity: 1;
+    }
+
+    #caption {
+      position: absolute;
+      bottom: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #000;
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.7);
+      padding: 10px;
+      border-radius: 10px;
+      z-index: 300;
+      font-size: 1.1em;
+      max-width: 80%;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="index.html">Home Page</a>
+  <a href="citation.html">Citation</a>
+
+  <div id="container">
+    <!-- Camera with tooltip -->
+    <div id="worldwartwo" onclick="flashAndGo()" role="button" tabindex="0">
+      <div class="tooltip-wrapper">
+        <img src="worldwarcamera.png" alt="World War II Camera" height="370" width="500" />
+        <div class="tooltip-text">Click camera to time travel</div>
+      </div>
+    </div>
+
+    <!-- Background image -->
+    <div id="epinal">
+      <img src="epinal.png" alt="Epinal Cemetery Background" height="900" width="1600" />
+    </div>
+
+    <!-- Items layered over background -->
+    <div id="obit">
+      <img src="obit.png" style="transform: rotate(20deg)" alt="Obituary" height="400" width="300" />
+    </div>
+
+    <div id="tube">
+      <img src="tube.png" style="transform: rotate(-40deg)" alt="Tube" height="762" width="300" />
+    </div>
+
+    <div id="goggles">
+      <img src="goggles.png" style="transform: rotate(10deg)" alt="Goggles" height="300" width="400" />
+    </div>
+
+    <div id="musket">
+      <img src="musket.png" alt="Musket" height="300" width="400" />
+    </div>
+
+    <!-- Caption -->
+    <div id="caption">
+      <p>Wait! I thought it read he was slightly wounded? Is this the cemetery in Epinal, France? Let's try another photo with this camera.</p>
+    </div>
+  </div>
+
+  <!-- Flash overlay -->
+  <div id="flash"></div>
+
+  <script>
+    function flashAndGo() {
+      const flash = document.getElementById("flash");
+      flash.classList.remove("flash-active");
+      void flash.offsetWidth; // Force reflow
+      flash.classList.add("flash-active");
+
+      setTimeout(() => {
+        window.location.href = "thewill.html";
+      }, 400);
+    }
+
+    // Optional: make the camera keyboard-accessible
+    document.getElementById("worldwartwo").addEventListener("keydown", function(e) {
+      if (e.key === "Enter" || e.key === " ") {
+        flashAndGo();
+      }
+    });
+  </script>
+</body>
+</html>
