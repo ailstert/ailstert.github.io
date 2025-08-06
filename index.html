@@ -2,36 +2,122 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <title>Digital Art</title>
+        <title>Styled Page</title>
+
+        <!-- Google Fonts -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=League+Gothic&family=Open+Sans:wght@400;600;700&display=swap"
+            rel="stylesheet" />
+
+        <style>
+            body {
+                background-color: #f2d768;
+                font-family: "Open Sans", sans-serif;
+                font-weight: 600;
+                margin: 20px;
+                color: #222;
+            }
+
+            h1 {
+                font-family: "League Gothic", sans-serif;
+                font-weight: normal;
+                font-size: 10rem;
+                margin: 0;
+                color: #222;
+            }
+
+            h2 {
+                font-family: "Open Sans", sans-serif;
+                font-weight: 700;
+                font-size: 2rem;
+                margin-top: 20px;
+                color: #222;
+            }
+
+            p {
+                font-size: 1.1rem;
+                max-width: 700px;
+                line-height: 1.6;
+                margin-bottom: 30px;
+                color: #222;
+            }
+
+            .stars {
+                font-size: 2.5rem;
+                margin: 40px 0;
+                text-align: center;
+                line-height: 3.5rem;
+            }
+
+            .stars a {
+                text-decoration: none;
+                margin: 10px;
+                color: #000; /* Black stars */
+                transition:
+                    transform 0.3s ease,
+                    color 0.3s ease;
+                display: inline-block;
+                cursor: pointer;
+            }
+
+            .stars a:hover {
+                color: #c45c00; /* Orange on hover */
+                transform: scale(1.3) rotate(-5deg);
+            }
+
+            .centered-img {
+                display: block;
+                margin: 40px auto;
+            }
+
+            footer {
+                font-family: "Open Sans", sans-serif;
+                font-weight: 400;
+                margin-top: 50px;
+                text-align: center;
+                color: #222;
+            }
+        </style>
     </head>
-    <body style="background-color: pink; color: white">
-        <p>Welcome To My Digital Art Page</p>
-        <br />
-        <a href="Project1/graphics.html">Graphic Design</a> <br />
-        <a href="Project1/commercialphoto.html">Commercial Photography</a> <br />
-        <a href="Project1/aboutme.html">About Me</a> <br />
-        <a href="Project1/gifshowcase.html">GIF Showcase</a> <br />
-        <br />
-        <a href="queengallery/queen.html">The Queen's Sorrow</a> <br />
-        <a href="queengallery/black%20crow.html">The Black Crow</a> <br />
-        <a href="queengallery/thefinalact.html">The Final Act</a> <br />
-        <a href="queengallery/summary.html">Summary</a> <br />
-        <br />
-        <a href="the%20will/thewill.html">The Will- 8 Page Story</a> <br />
-        <a href="the%20will/citation.html">Citation for 8 Page Story</a><br />
-        <br />
-        <a href="drawing.html">Landscape P5.js</a><br />
-        <br />
-        <a href="rwd01.html">RWD Practice</a><br />
-        <br />
-        <a href="selfportrait.html">Self Portrait</a><br />
-        <br />
-        <a href="wireframe.html">Wireframe Layout</a><br />
-        <br />
-        <a href="style-guide.html">Portfolio Draft</a><br />
-        <br />
-        <a href="Index%20draft.html">Index Draft</a> <br />
-        <br />
-        <a href="404.html">404 Page</a>
+
+    <body>
+        <!-- Main Portfolio Title -->
+        <h1>PORTFOLIO</h1>
+
+        <!-- Name + Secondary Navigation -->
+
+        <div class="stars">
+            <a href="about.html" title="About Me">★</a>
+            <a href="404.html" title="404 Page">★</a>
+        </div>
+
+        <!-- Centered Selfie Image -->
+        <img src="selfie.jpeg" alt="Self Image" width="350" height="363" class="centered-img" />
+
+        <!-- Main Star Navigation -->
+        <div class="stars">
+            <a href="graphicdesign.html" title="Graphic Design">★</a>
+            <a href="commercial.html" title="Commercial Photography">★</a>
+            <a href="gifshowcases.html" title="GIF Showcase">★</a>
+            <a href="queengallery/queen.html" title="Net Art">★</a>
+            <a href="the will/thewill.html" title="Story">★</a>
+            <a href="drawing.html" title="Landscape">★</a>
+            <a href="selfportrait.html" title="Self Portrait">★</a>
+            <a href="rwd01.html" title="RWD Practice">★</a>
+            <a href="crochet.html" title="Crochet">★</a>
+        </div>
+        <h1 style="text-align: right">Tami Ailster</h1>
+
+        <!-- Welcome Text -->
+        <h2>Welcome in!</h2>
+        <p>
+            I’m a Graphic Design student at the University of West Florida with a passion for creating logos,
+            photography, menus, and design packets that connect with my clients’ audiences.
+            <br /><br />
+            Thanks for visiting! Enjoy ...follow the STARS!
+        </p>
+
+        <!-- Footer -->
+        <footer>&copy; 2025 Tami Ailster</footer>
     </body>
 </html>
