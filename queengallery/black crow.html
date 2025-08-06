@@ -1,126 +1,156 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <title>The Queen's Sorrow</title>
-        <style>
-            body {
-                background-color: dimgray;
-            }
-            #container {
-                position: relative;
-                width: 1600px;
-                height: 900px;
-                margin: auto;
-            }
+<head>
+    <meta charset="UTF-8" />
+    <title>The Queen's Sorrow</title>
+    <style>
+        body {
+            background-color: dimgray;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
 
-            #sky {
-                position: absolute;
-                width: 1600px;
-                height: 900px;
-                margin: auto;
-                z-index: 10;
-            }
+        .stars {
+            font-size: 2.5rem;
+            margin: 40px 0 20px;
+            text-align: center;
+            line-height: 3.5rem;
+        }
 
-            #evening {
-                position: absolute;
-                width: 1600px;
-                height: 900px;
-                margin: auto;
-                z-index: 0;
-            }
+        .stars a {
+            text-decoration: none;
+            margin: 10px;
+            color: #000; /* black stars */
+            transition: transform 0.3s ease, color 0.3s ease;
+            display: inline-block;
+            cursor: pointer;
+        }
 
-            #crow {
-                position: absolute;
-                bottom: 310px;
-                left: 350px;
-                z-index: 19;
-            }
+        .stars a:hover {
+            color: #c45c00; /* orange on hover */
+            transform: scale(1.3) rotate(-5deg);
+        }
 
-            #pride {
-                position: absolute;
-                bottom: 600px;
-                left: 150px;
-                z-index: 20;
-            }
+        #container {
+            position: relative;
+            width: 1600px;
+            height: 900px;
+            margin: auto;
+        }
 
-            #envy {
-                position: absolute;
-                bottom: 610px;
-                left: 480px;
-                z-index: 21;
-            }
+        #sky,
+        #evening {
+            position: absolute;
+            width: 1600px;
+            height: 900px;
+            z-index: 0;
+        }
 
-            #greed {
-                position: absolute;
-                bottom: 610px;
-                left: 840px;
-                z-index: 22;
-            }
+        #sky {
+            z-index: 10;
+        }
 
-            #glutton {
-                position: absolute;
-                bottom: 610px;
-                left: 1180px;
-                z-index: 23;
-            }
+        #crow {
+            position: absolute;
+            bottom: 310px;
+            left: 350px;
+            z-index: 19;
+        }
 
-            #crowtext {
-                position: absolute;
-                bottom: -120px;
-                left: 800px;
-                z-index: 30;
-            }
+        #pride {
+            position: absolute;
+            bottom: 600px;
+            left: 150px;
+            z-index: 20;
+        }
 
-            #sketchcrown {
-                position: absolute;
-                bottom: 10px;
-                left: 1300px;
-                z-index: 30;
-            }
+        #envy {
+            position: absolute;
+            bottom: 610px;
+            left: 480px;
+            z-index: 21;
+        }
 
-            #feather {
-                position: absolute;
-                bottom: 280px;
-                left: 465px;
-                z-index: 5;
-            }
+        #greed {
+            position: absolute;
+            bottom: 610px;
+            left: 840px;
+            z-index: 22;
+        }
 
-            #sins {
-                position: absolute;
-                bottom: 320px;
-                left: 1065px;
-                z-index: 40;
-            }
+        #glutton {
+            position: absolute;
+            bottom: 610px;
+            left: 1180px;
+            z-index: 23;
+        }
 
-            #statue {
-                position: absolute;
-                bottom: -160px;
-                left: 100px;
-                z-index: 50;
-            }
-        </style>
-    </head>
-    <body>
-        <a href="index.html">Home Page</a>
-        <a href="queen.html">The Queen's Sorrow</a>
-        <a href="thefinalact.html">The Final Act</a>
-        <a href="summary.html">Summary</a>
-        <div id="container">
-            <div id="sky"><img src="sky.png" alt="sky" height="900" width="1600" /></div>
-            <div id="evening"><img src="evening.png" alt="evening" height="900" width="1600" /></div>
-            <div id="crow"><img src="crow.png" alt="crow" height="194" width="259" /></div>
-            <div id="pride"><img src="pride.png" style="opacity: 0.5" alt="pride" height="300" width="300" /></div>
-            <div id="envy"><img src="envy.png" style="opacity: 0.5" alt="envy" height="300" width="300" /></div>
-            <div id="greed"><img src="greed.png" style="opacity: 0.5" alt="greed" height="300" width="300" /></div>
-            <div id="glutton">
-                <img src="glutton.png" style="opacity: 0.5" alt="glutton" height="300" width="300" />
-            </div>
-            <div id="sketchcrown"><img src="sketchcrown.png" alt="sketchcrown" height="300" width="300" /></div>
-            <div id="crowtext"><img src="crowtext.png" alt="crowntext" height="500" width="500" /></div>
-            <div id="feather"><img src="feather.gif" alt="feather" height="450" width="450" /></div>
-            <div id="sins"><img src="sins.png" style="opacity: 0.7" alt="sins" height="78" width="135" /></div>
-            <div id="statue"><img src="statue.png" style="opacity: 0.8" alt="statue" height="570" width="600" /></div>
-        </div>
-    </body>
+        #crowtext {
+            position: absolute;
+            bottom: -120px;
+            left: 800px;
+            z-index: 30;
+        }
+
+        #sketchcrown {
+            position: absolute;
+            bottom: 10px;
+            left: 1300px;
+            z-index: 30;
+        }
+
+        #feather {
+            position: absolute;
+            bottom: 280px;
+            left: 465px;
+            z-index: 5;
+        }
+
+        #sins {
+            position: absolute;
+            bottom: 320px;
+            left: 1065px;
+            z-index: 40;
+        }
+
+        #statue {
+            position: absolute;
+            bottom: -160px;
+            left: 100px;
+            z-index: 50;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #fff;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="stars">
+        <a href="../portfolioindex.html">★ Home Page</a>
+        <a href="queen.html">★ Page 1</a>
+        <a href="thefinalact.html">★ Page 3</a>
+        <a href="summary.html">★ Summary</a>
+    </div>
+
+    <div id="container">
+        <div id="sky"><img src="sky.png" alt="sky" height="900" width="1600" /></div>
+        <div id="evening"><img src="evening.png" alt="evening" height="900" width="1600" /></div>
+        <div id="crow"><img src="crow.png" alt="crow" height="194" width="259" /></div>
+        <div id="pride"><img src="pride.png" style="opacity: 0.5" alt="pride" height="300" width="300" /></div>
+        <div id="envy"><img src="envy.png" style="opacity: 0.5" alt="envy" height="300" width="300" /></div>
+        <div id="greed"><img src="greed.png" style="opacity: 0.5" alt="greed" height="300" width="300" /></div>
+        <div id="glutton"><img src="glutton.png" style="opacity: 0.5" alt="glutton" height="300" width="300" /></div>
+        <div id="sketchcrown"><img src="sketchcrown.png" alt="sketchcrown" height="300" width="300" /></div>
+        <div id="crowtext"><img src="crowtext.png" alt="crowntext" height="500" width="500" /></div>
+        <div id="feather"><img src="feather.gif" alt="feather" height="450" width="450" /></div>
+        <div id="sins"><img src="sins.png" style="opacity: 0.7" alt="sins" height="78" width="135" /></div>
+        <div id="statue"><img src="statue.png" style="opacity: 0.8" alt="statue" height="570" width="600" /></div>
+    </div>
+
+    <footer>&copy; 2025 Tami Ailster</footer>
+</body>
 </html>

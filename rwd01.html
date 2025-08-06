@@ -1,48 +1,77 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Tami Ailster Portfolio</title>
-        <link rel="stylesheet" href="rwd01.css" />
-    </head>
-    <body>
-        <div id="container">
-            <div class="identity">
-                <h1>Tami Ailster Portfolio</h1>
-                <a href="index.html">Home Page</a>
-            </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tami Ailster Portfolio</title>
+    <link rel="stylesheet" href="rwd01.css" />
+    <style>
+      .home-star {
+        font-size: 3rem;
+        text-decoration: none;
+        color: #000; /* Black star */
+        transition: transform 0.3s ease, color 0.3s ease;
+        display: block;
+        margin: 20px auto; /* Center horizontally */
+        text-align: center;
+        width: max-content;
+      }
 
-            <div class="imgbox">
-                <p>Click on the image for a larger view</p>
-                <a href="rwd01img/owl.jpeg">
-                    <img src="rwd01img/owl.jpeg" alt="Owl" />
-                </a>
+      .home-star:hover {
+        color: #c45c00; /* Orange on hover */
+        transform: scale(1.2) rotate(-10deg);
+      }
 
-                <a href="rwd01img/eggs.jpeg">
-                    <img src="rwd01img//eggs.jpeg" alt="Eggs" />
-                </a>
+      footer {
+        text-align: center;
+        padding: 10px;
+        margin-top: 40px; /* Push it below the content */
+      }
+    </style>
+  </head>
 
-                <a href="rwd01img/butterfly.jpeg">
-                    <img src="rwd01img/butterfly.jpeg" alt="Butterfly" />
-                </a>
+  <body>
+    <a href="portfolioindex.html" class="home-star" title="Back to Home">★</a>
 
-                <a href="rwd01img/lantern.jpeg">
-                    <img src="rwd01img/lantern.jpeg" alt="Lantern" />
-                </a>
+    <div id="container">
+      <div class="identity">
+        <h1>Tami Ailster Portfolio</h1>
+      </div>
 
-                <a href="rwd01img/baboon.jpeg">
-                    <img src="rwd01img/baboon.jpeg" alt="Baboon" />
-                </a>
+      <div class="imgbox">
+        <p>Click on the image for a larger view</p>
 
-                <a href="rwd01img/beads.jpeg">
-                    <img src="rwd01img/beads.jpeg" alt="Beads" />
-                </a>
+        <a href="rwd01img/owl.jpeg">
+          <img src="rwd01img/owl.jpeg" alt="Owl" />
+        </a>
 
-                <a href="rwd01img/sardines.jpeg">
-                    <img src="rwd01img/sardines.jpeg" alt="Sardines" />
-                </a>
-            </div>
-        </div>
-    </body>
+        <a href="rwd01img/eggs.jpeg">
+          <img src="rwd01img/eggs.jpeg" alt="Eggs" />
+        </a>
+
+        <a href="rwd01img/butterfly.jpeg">
+          <img src="rwd01img/butterfly.jpeg" alt="Butterfly" />
+        </a>
+
+        <a href="rwd01img/lantern.jpeg">
+          <img src="rwd01img/lantern.jpeg" alt="Lantern" />
+        </a>
+
+        <a href="rwd01img/baboon.jpeg">
+          <img src="rwd01img/baboon.jpeg" alt="Baboon" />
+        </a>
+
+        <a href="rwd01img/beads.jpeg">
+          <img src="rwd01img/beads.jpeg" alt="Beads" />
+        </a>
+
+        <a href="rwd01img/sardines.jpeg">
+          <img src="rwd01img/sardines.jpeg" alt="Sardines" />
+        </a>
+      </div>
+    </div>
+
+    <footer>&copy; 2025 Tami Ailster</footer>
+  </body>
 </html>
+

@@ -1,36 +1,72 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <title>On a bright desert highway</title>
-        <style>
-            body {
-                background-color: #da5720;
-                font-family: sans-serif;
-                text-align: center;
-                padding: 20px;
-            }
+<head>
+  <meta charset="UTF-8" />
+  <title>On a Bright Desert Highway</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      background-color: rgb(218, 108, 155);
+      font-family: "Open Sans", sans-serif;
+      text-align: center;
+      padding: 20px;
+      color: #fff;
+    }
 
-            #container {
-                position: relative;
-                width: 600px;
-                height: 400px;
-                margin: auto;
-            }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
 
-            iframe {
-                width: 600px;
-                height: 400px;
-                border: none;
-            }
-        </style>
-    </head>
+    #container {
+      position: relative;
+      width: 600px;
+      height: 400px;
+      margin: 0 auto 40px auto;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
 
-    <body>
-        <a href="index.html">Home Page</a>
-        <h1>On a bright desert highway, cool whip in my hair.</h1>
-        <div id="container">
-            <iframe src="https://editor.p5js.org/ailstert/full/jH9qSwHZ-" title="landscape"></iframe>
-        </div>
-    </body>
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .home-star {
+      font-size: 2.5rem;
+      text-decoration: none;
+      color: #fff;
+      display: inline-block;
+      transition: transform 0.3s ease, color 0.3s ease;
+      margin-bottom: 20px;
+    }
+
+    .home-star:hover {
+      color: #000;
+      transform: scale(1.2) rotate(-10deg);
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #fff;
+    }
+  </style>
+    
+</head>
+
+<body>
+  <a class="home-star" href="portfolioindex.html" title="Back to Portfolio">★</a>
+
+
+  <h1>On a bright desert highway, cool whip in my hair.</h1>
+
+
+  <div id="container">
+    <iframe src="https://editor.p5js.org/ailstert/full/jH9qSwHZ-" title="landscape"></iframe>
+  </div>
+
+
+  <footer>&copy; 2025 Tami Ailster</footer>
+</body>
 </html>

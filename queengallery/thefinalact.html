@@ -1,132 +1,145 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <title>The Queen's Sorrow</title>
-        <style>
-            body {
-                background-color: white;
-            }
-            #container {
-                position: relative;
-                width: 1600px;
-                height: 900px;
-                margin: auto;
-            }
+<head>
+    <meta charset="UTF-8" />
+    <title>The Queen's Sorrow</title>
+    <style>
+        body {
+            background-color: white;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
 
-            #spooky {
-                position: absolute;
-                width: 1600px;
-                height: 900px;
-                margin: auto;
-                z-index: 1;
-            }
+        .stars {
+            font-size: 2.5rem;
+            margin: 20px 0;
+            text-align: center;
+            line-height: 3.5rem;
+        }
 
-            #crow {
-                position: absolute;
-                bottom: 470px;
-                left: 580px;
-                z-index: 19;
-            }
+        .stars a {
+            text-decoration: none;
+            margin: 10px;
+            color: #000; /* Black stars and text */
+            transition: transform 0.3s ease, color 0.3s ease;
+            display: inline-block;
+            cursor: pointer;
+        }
 
-            #deadqueen {
-                position: absolute;
-                bottom: 1px;
-                left: 650px;
-                z-index: 20;
-            }
+        .stars a:hover {
+            color: #c45c00; /* Orange on hover */
+            transform: scale(1.3) rotate(-5deg);
+        }
 
-            #smoke {
-                position: absolute;
-                bottom: 150px;
-                left: 1110px;
-                z-index: 21;
-            }
+        #container {
+            position: relative;
+            width: 1600px;
+            height: 900px;
+            margin: auto;
+        }
 
-            #malestatue {
-                position: absolute;
-                bottom: 350px;
-                left: 500px;
-                z-index: 3;
-            }
+        #container div {
+            position: absolute;
+        }
 
-            #finaltext {
-                position: absolute;
-                bottom: 220px;
-                left: 1100px;
-                z-index: 23;
-            }
+        #spooky { z-index: 1; }
+        #crow {
+            bottom: 470px;
+            left: 580px;
+            z-index: 19;
+        }
 
-            #rosebud {
-                position: absolute;
-                bottom: -40px;
-                left: 100px;
-                z-index: 25;
-            }
+        #deadqueen {
+            bottom: 1px;
+            left: 650px;
+            z-index: 20;
+        }
 
-            #clock {
-                position: absolute;
-                bottom: 440px;
-                left: 109px;
-                z-index: 26;
-            }
+        #smoke {
+            bottom: 150px;
+            left: 1110px;
+            z-index: 21;
+        }
 
-            #tornpaper {
-                position: absolute;
-                bottom: 260px;
-                left: 1050px;
-                z-index: 22;
-            }
+        #malestatue {
+            bottom: 350px;
+            left: 500px;
+            z-index: 3;
+        }
 
-            #throne {
-                position: absolute;
-                bottom: 260px;
-                left: 850px;
-                z-index: 2;
-            }
+        #finaltext {
+            bottom: 220px;
+            left: 1100px;
+            z-index: 23;
+        }
 
-            #crows {
-                position: absolute;
-                bottom: 500px;
-                left: 250px;
-                z-index: 35;
-            }
+        #rosebud {
+            bottom: -40px;
+            left: 100px;
+            z-index: 25;
+        }
 
-            #circlecrows {
-                position: absolute;
-                bottom: 200px;
-                left: 470px;
-                z-index: 0;
-            }
-        </style>
-    </head>
-    <body>
-        <a href="index.html">Home Page</a>
-        <a href="queen.html">The Queen's Sorrow</a>
-        <a href="black%20crow.html">The Black Crow</a>
-        <a href="summary.html">Summary</a>
-        <div id="container">
-            <div id="spooky"><img src="spooky.png" alt="spooky" height="900" width="1600" /></div>
-            <div id="crow"><img src="crow.png" alt="crow" height="194" width="259" /></div>
-            <div id="deadqueen">
-                <img src="deadqueen.png" style="opacity: 0.7" alt="deadqueen" height="519" width="519" />
-            </div>
-            <div id="smoke"><img src="smoke.png" style="opacity: 0.4" alt="smoke" height="194" width="259" /></div>
-            <div id="malestatue">
-                <img src="malestatue.png" style="opacity: 0.7" alt="malestatue" height="500" width="300" />
-            </div>
-            <div id="finaltext"><img src="finaltext.png" alt="finaltext" height="500" width="500" /></div>
-            <div id="rosebud">
-                <img src="rosebud.png" style="opacity: 0.4" alt="rosebud" height="300" width="300" />
-            </div>
-            <div id="clock"><img src="clock.png" alt="clock" height="150" width="150" /></div>
+        #clock {
+            bottom: 440px;
+            left: 109px;
+            z-index: 26;
+        }
 
-            <div id="tornpaper">
-                <img src="tornpaper.png" style="opacity: 0.7" alt="tornpaper" height="600" width="600" />
-            </div>
-            <div id="throne"><img src="throne.png" style="opacity: 0.4" alt="throne" height="500" width="500" /></div>
-            <div id="crows"><img src="crows.png" alt="crows" height="200" width="300" /></div>
-            <div id="circlecrows"><img src="circlecrows.gif" alt="circlecrows" height="450" width="450" /></div>
-        </div>
-    </body>
+        #tornpaper {
+            bottom: 260px;
+            left: 1050px;
+            z-index: 22;
+        }
+
+        #throne {
+            bottom: 260px;
+            left: 850px;
+            z-index: 2;
+        }
+
+        #crows {
+            bottom: 500px;
+            left: 250px;
+            z-index: 35;
+        }
+
+        #circlecrows {
+            bottom: 200px;
+            left: 470px;
+            z-index: 0;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="stars">
+        <a href="../portfolioindex.html">&#9733; Home Page</a>
+        <a href="queen.html">&#9733; Page 1</a>
+        <a href="black%20crow.html">&#9733;Page 2</a>
+        <a href="summary.html">&#9733; Summary</a>
+    </div>
+
+    <div id="container">
+        <div id="spooky"><img src="spooky.png" alt="spooky" height="900" width="1600" /></div>
+        <div id="crow"><img src="crow.png" alt="crow" height="194" width="259" /></div>
+        <div id="deadqueen"><img src="deadqueen.png" style="opacity: 0.7" alt="deadqueen" height="519" width="519" /></div>
+        <div id="smoke"><img src="smoke.png" style="opacity: 0.4" alt="smoke" height="194" width="259" /></div>
+        <div id="malestatue"><img src="malestatue.png" style="opacity: 0.7" alt="malestatue" height="500" width="300" /></div>
+        <div id="finaltext"><img src="finaltext.png" alt="finaltext" height="500" width="500" /></div>
+        <div id="rosebud"><img src="rosebud.png" style="opacity: 0.4" alt="rosebud" height="300" width="300" /></div>
+        <div id="clock"><img src="clock.png" alt="clock" height="150" width="150" /></div>
+        <div id="tornpaper"><img src="tornpaper.png" style="opacity: 0.7" alt="tornpaper" height="600" width="600" /></div>
+        <div id="throne"><img src="throne.png" style="opacity: 0.4" alt="throne" height="500" width="500" /></div>
+        <div id="crows"><img src="crows.png" alt="crows" height="200" width="300" /></div>
+        <div id="circlecrows"><img src="circlecrows.gif" alt="circlecrows" height="450" width="450" /></div>
+    </div>
+
+    <footer>&copy; 2025 Tami Ailster</footer>
+</body>
 </html>
